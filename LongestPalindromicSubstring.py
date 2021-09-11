@@ -1,4 +1,4 @@
-input_string = input("Enter you String....")
+s = input("Enter you String....")
 
 def isPalindrome(value):
         flag = False
