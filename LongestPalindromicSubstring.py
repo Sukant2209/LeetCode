@@ -29,5 +29,5 @@ def palindrome(s):
         return str_ret if str_ret else s[0]
           
         
-result = palindrome(input_string)  
+result = palindrome(s)  
 print(result)
