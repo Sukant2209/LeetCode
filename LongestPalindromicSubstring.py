@@ -2,32 +2,28 @@ s = input("Enter you String....")
 
 def isPalindrome(value):
         flag = False
-        if len(value) == 1:
-            return flag ,0
         if value == value[::-1]:
             flag = True
         return flag , len(value)
 
 def palindrome(s):
-    str_ret = None
-    temp_val = 0
+
     length = len(s)
+    l_dict = {}
     if length == 1:
-        return s
-    elif length==2:
-        temp_flag , temp_len = isPalindrome(s)
-        return s if temp_flag else s[0]
+            return s[0]
+    elif length == 2:
+            return s if s==s[::-1] else s[0]
     else:
         for i in range(length):
             for j in range(i+1,length+1):
                 temp_flag , temp_len = isPalindrome(s[i:j])
-                if temp_flag and temp_len > temp_val:
-                    str_ret = s[i:j]
-                    temp_val = temp_len
+                if temp_flag :
+                    l_dict[s[i:j]] = temp_len
                 else:
                     continue
-        return str_ret if str_ret else s[0]
+        return max(l_dict, key= lambda x: l_dict[x])
           
         
-result = palindrome(s)  
+result = palindrome(s)
 print(result)
